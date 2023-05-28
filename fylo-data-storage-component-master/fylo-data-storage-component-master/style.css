@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+
+:root {
+    --gradient1: hsl(6, 100%, 80%);
+    --gradient2: hsl(335, 100%, 65%);
+
+    --clr-neutral-100: hsl(243, 100%, 93%);
+    --clr-neutral-300: hsl(229, 7%, 55%);
+    --clr-neutral-600: hsl(228, 56%, 26%);
+    --clr-neutral-800: hsl(229, 57%, 11%);
+
+    --fw-normal: 400;
+    --fw-bold: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    background: var(--clr-neutral-800);
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./images/bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: hidden;
+}
+
+@media (width > 1010px) {
+    body {
+        background-image: url(./images/bg-desktop.png);
+        background-size: auto;
+        background-position: bottom;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 1rem;
+}
+
+@media (width > 1010px) {
+    .container {
+        flex-direction: row;
+        gap: 2rem;
+        min-height: 112vh;
+    }
+}
+
+.card {
+    background: var(--clr-neutral-600);
+    padding: 2rem;
+    border-radius: .5rem 6rem .5rem .5rem;
+    min-width: 350px;
+    margin-bottom: 1rem;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.icon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--clr-neutral-800);
+    padding: .8rem;
+    border-radius: .5rem;
+}
+
+.card-content {
+    position: relative;
+    background: var(--clr-neutral-600);
+    padding: 2rem;
+    border-radius: .5rem;
+    width: 350px;
+    height: 170px;
+}
+
+@media (width > 1010px) {
+    .card-content {
+        min-width: 600px;
+        height: 150px;
+        margin-top: 1.5rem;
+    }
+}
+
+.header-info {
+    font-size: .9rem;
+    text-align: center;
+    color: var(--clr-neutral-100);
+    font-weight: var(--fw-normal);
+}
+
+@media (width > 1010px) {
+    .header-info {
+        text-align: left;
+    }
+}
+
+.header-info span {
+    font-weight: var(--fw-bold);
+}
+
+.slider {
+    background: var(--clr-neutral-800);
+    width: 100%;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 3px;
+}
+
+.slider .progress {
+    background-image: linear-gradient(90deg, var(--gradient1), var(--gradient2));
+    width: 70%;
+    display: flex;
+    border-radius: 1rem;
+    justify-content: end;
+    align-items: center;
+}
+
+.slider .progress .ball {
+    width: .6rem;
+    height: .6rem;
+    border-radius: 50%;
+    margin: 3px;
+    background: var(--clr-neutral-100);
+}
+
+.slider-progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--clr-neutral-100);
+    font-weight: var(--fw-bold);
+}
+
+.space-left {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: -33px;
+    left: 50%;
+    transform: translate(-50%);
+    background: #fff;
+    padding: .7rem 1.2rem;
+    font-size: 1.6rem;
+    font-weight: var(--fw-bold);
+    border-radius: .5rem;
+    text-transform: uppercase;
+    font-size: .7rem;
+    gap: .5rem;
+    color: var(--clr-neutral-300);
+}
+
+@media (width > 1010px) {
+    .floating-container {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        left: unset;
+        right: 3rem;
+        top: -30%;
+    }
+
+    .space-left {
+        left: 81.5%;
+        bottom: 85%;
+        width: 160px;
+        border-bottom-right-radius: 0;
+    }
+
+    .space-left::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -18px;
+        display: block;
+        border-right: 10px solid #fff;
+        border-top: 10px solid #fff;
+        border-left: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+    }
+}
+
+.space-left span {
+    font-size: 2.5rem;
+    color: var(--clr-neutral-800);
+}
+
+.attribution {
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 11px;
+    text-align: center;
+    color: hsl(0, 0%, 80%);
+}
+
+.attribution a {
+    color: hsl(228, 67%, 62%);
+}
+
+.signature {
+    color: #f00;
+    font-weight: var(--fw-bold);
+}
